@@ -1,0 +1,69 @@
+.project-ai .project-visual {
+  background: #101a2c url("tutor.png") center / contain no-repeat;
+}
+
+.project-chat .project-visual {
+  background: #edf9f2 url("SecureChat.png") center / contain no-repeat;
+}
+
+.project-visual {
+  height: auto;
+  min-height: 0;
+  aspect-ratio: 16 / 9;
+}
+
+.project-ai .visual-grid,
+.project-ai .ai-signal,
+.project-chat .chat-lines,
+.project-chat .lock-mark {
+  display: none;
+}
+
+.project-visual::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(5, 7, 10, .2), transparent 38%, rgba(5, 7, 10, .34));
+}
+
+.project-visual .visual-file {
+  z-index: 1;
+  color: #edece7;
+  text-shadow: 0 1px 10px rgba(0, 0, 0, .7);
+}
+
+html.js-enabled .reveal {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity .9s ease, transform .9s cubic-bezier(.2, .8, .2, 1);
+}
+
+html.js-enabled .reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+
+.skills-marquee {
+  animation: none;
+  display: block;
+  overflow: hidden;
+}
+
+.skills-marquee-track {
+  display: flex;
+  width: max-content;
+  gap: 40px;
+  animation: marquee 18s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skills-marquee-track {
+    animation: none;
+  }
+}
+
+.cursor,
+body.cursor-hover .cursor {
+  display: none !important;
+}
